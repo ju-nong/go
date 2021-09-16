@@ -6,7 +6,7 @@ import (
 	"time" // seed 생성용 패키지
 )
 
-// 난수 추출된 수의 소수 판정 프로그램 v0.4
+// 난수 추출된 수의 소수 판정 프로그램 v0.6
 func main() {
 	seed := time.Now().Unix()
 	rand.Seed(seed)
@@ -18,6 +18,7 @@ func main() {
 	for i := 2; i < number; i++ {
 		if number%i == 0 {
 			isPrime = false
+			break //2부터해서 약수가 발견되면 반복문 즉시 종료
 		}
 		fmt.Print(i, " ")
 	}
